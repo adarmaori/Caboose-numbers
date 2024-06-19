@@ -40,8 +40,6 @@ fn main() {
         let prime: u64 = line.trim().parse().unwrap();
         primes.push(prime);
     }
-    // pop out the last prime number, it's a bug
-    primes.pop();
     let mut index = 2;
     loop {
         let num = primes[index];
