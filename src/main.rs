@@ -2,7 +2,16 @@ use std::fs::File;
 use std::io::{BufRead, BufReader};
 
 fn is_prime(n: u64, primes: Vec<u64>) -> bool {
-    // for now, simply check if n is in primes
+    if n > primes[primes.len() - 1] {
+        for i in primes {
+            if n % i == 0 {
+                return false;
+            }
+            if i * i > n {
+                return true;
+            }
+        }
+    }
     let min = 0;
     let max = (n as usize) / 2 + 1;
     let mut left = min;
